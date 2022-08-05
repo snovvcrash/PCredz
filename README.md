@@ -1,5 +1,18 @@
 # PCredz
 
+:exclamation: **Changes in this fork:** added a Dockerfile due to the [Cython bug with Python 3.10](https://stackoverflow.com/a/70454853/6253579).
+
+Run the container as follows (logs are saved to `~/.pcredz`):
+
+```console
+~$ alias pcredz='docker run --rm -it --network host -v ~/.pcredz:/root/.pcredz snovvcrash/pcredz'
+~$ pcredz
+```
+
+[![dockeri.co](https://dockeri.co/image/snovvcrash/pcredz)](https://hub.docker.com/r/snovvcrash/pcredz)
+
+---
+
 This tool extracts Credit card numbers, NTLM(DCE-RPC, HTTP, SQL, LDAP, etc), Kerberos (AS-REQ Pre-Auth etype 23), HTTP Basic, SNMP, POP, SMTP, FTP, IMAP, etc from a pcap file or from a live interface.
 
 ## Features
@@ -51,4 +64,3 @@ python3 ./Pcredz -i eth0 -v
   -i eth0             interface for live capture
   -v                  More verbose.
 ```
-
